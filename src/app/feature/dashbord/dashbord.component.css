@@ -1,0 +1,27 @@
+.dashboard-container {
+       padding: 20px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     
+     .weather-card {
+       width: 300px;
+       text-align: center;
+       background-color: #e0f7fa;
+     }
+     
+     mat-card-title {
+       font-size: 20px;
+       color: #00796b;
+     }
+     
+     mat-card-content {
+       font-size: 24px;
+       color: #004d40;
+     }
+     
+     button {
+       width: 100%;
+     }
+     

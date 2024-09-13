@@ -1,0 +1,25 @@
+.navbar {
+       display: flex;
+       justify-content: space-between;
+       padding: 0 16px;
+     }
+     
+     .navbar-title {
+       font-size: 24px;
+       font-weight: bold;
+       margin-right: 16px;
+     }
+     
+     .spacer {
+       flex: 1 1 auto;
+     }
+     
+     mat-form-field {
+       width: 100px;
+       margin-right: 8px;
+     }
+     
+     button[disabled] {
+       color: rgba(0, 0, 0, 0.38); /* Similar to the disabled style in the image */
+     }
+     

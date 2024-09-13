@@ -1,0 +1,15 @@
+/* Footer Styles */
+.footer {
+       position: fixed;
+       bottom: 0;
+       width: 100%;
+       justify-content: center;
+       text-align: center;
+     }
+     
+     .footer-content {
+       font-size: 14px;
+       color: white;
+       margin: 0 auto;
+     }
+     

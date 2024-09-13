@@ -1,0 +1,35 @@
+<!---Loading Header-->
+<!-- <app-header></app-header> -->
+
+<div class="dashboard-container">
+  <mat-card class="weather-card">
+    <mat-card-header>
+      <mat-card-title>Recent Humidity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ weatherData?.humidity }}%</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="openWeatherModal()">
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!-- Modal Popup for Weather Details -->
+<ng-template #weatherDialog>
+  <h1 mat-dialog-title>Weather Details</h1>
+  <mat-dialog-content>
+    <p><strong>Location:</strong> {{ weatherData?.location }}</p>
+    <p><strong>Last Updated:</strong> {{ weatherData?.last_updated }}</p>
+    <p><strong>Humidity:</strong> {{ weatherData?.humidity }}%</p>
+    <p><strong>Wind_kph:</strong> {{ weatherData?.air_quality }}Kph</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
+
+<!---Loading footer-->
+<!-- <app-footer></app-footer> -->

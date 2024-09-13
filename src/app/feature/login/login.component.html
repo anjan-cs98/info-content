@@ -1,0 +1,65 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- Email Field -->
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          placeholder="Enter your email"
+          required
+        />
+        <mat-error *ngIf="hasError('email', 'required')"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="hasError('email', 'email')"
+          >Please enter a valid email</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <!-- Password Field -->
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          placeholder="Enter your password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hidePassword = !hidePassword"
+          type="button"
+        >
+          <mat-icon>{{
+            hidePassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </button>
+        <mat-error *ngIf="hasError('password', 'required')"
+          >Password is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <!-- Remember Me Checkbox -->
+    <div>
+      <mat-checkbox formControlName="rememberMe">Remember Me</mat-checkbox>
+    </div>
+
+    <!-- Login Button -->
+    <div>
+      <button mat-raised-button color="primary" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </div>
+  </form>
+
+  <p *ngIf="loginFailed" class="error-message">
+    Login failed. Please check your credentials.
+  </p>
+</div>

@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="navbar-title">Info-content </span>
+  <a mat-button>Date and Time: {{ currentTime$ | async | date : "medium" }}</a>
+  <ng-container *ngIf="isShow; else noShow">
+    <a mat-button [routerLink]="['/dashboard']">Dashbord</a>
+    <a mat-button [routerLink]="['/movie-list']">Movie list </a>
+    <span class="spacer"></span>
+    <button mat-stroked-button color="accent" (click)="Logout()">Logout</button>
+  </ng-container>
+  <ng-template #noShow></ng-template>
+</mat-toolbar>
